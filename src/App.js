@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import PhotoProfil from "./components/profil/PhotoProfil";
+import {Nav} from "react-bootstrap" ;
+import FullName from "./components/profil/FullName";
+import Adress from "./components/profil/Adress";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav defaultActiveKey="/home" className="flex-column">
+  <Nav.Link href="/home">Active</Nav.Link>
+  <Nav.Link eventKey="link-1">Link</Nav.Link>
+  <Nav.Link eventKey="link-2">Link</Nav.Link>
+  <Nav.Link eventKey="disabled" disabled>
+    Disabled
+  </Nav.Link>
+</Nav>
+      <PhotoProfil/>
+      <FullName/>
+      <Adress/>
     </div>
   );
 }
